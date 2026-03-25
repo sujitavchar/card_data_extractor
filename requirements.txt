@@ -6,3 +6,4 @@ pytesseract
 requests
 python-dotenv
 routers
+supabase
