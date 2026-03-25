@@ -9,7 +9,8 @@ You are an information extraction system.
 From the following OCR text of a business card, extract these fields if present. Following fields are compulsory,
 return 'NA' if any field is missing. If you find any other data, create an extra field with proper fieldname. Don't assume any details —
 strictly refer to the OCR text. If person name is unclear, refer to email id part before '@'. If company name is unclear, refer to company website domain.
-Required fields: Name, Designation, Company, Email, Phone, Website, Address. Always put address field at last. Avoid putting numbers in non-numerical fields like name.
+Required fields: Name, Designation, Company, Email, Phone, Website, Address. If there is any link or id of any social media platform, return 
+it in 'profiles: single string or array of strings ' field.  Always put address field at last. Avoid putting numbers in non-numerical fields like name.
 Address may contain only country, city or office locations. If the given Business card OCR text is random and has garbage value,
 return {{"error": "Blur image. Please make sure input image is landscape."}}
 Return ONLY a valid JSON object — no markdown, no explanation.

@@ -17,3 +17,6 @@ MODEL              = "arcee-ai/trinity-large-preview:free"
 SUPABASE_URL: str    = os.getenv("SUPABASE_URL", "")
 SUPABASE_ANON_KEY: str    = os.getenv("SUPABASE_ANON_KEY", "")
 supabase: Client     = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
+SECRET_KEY: str = os.getenv("SECRET_KEY", "")
+ALGORITHM :str=  os.getenv("ALGORITHM", "")
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
