@@ -17,6 +17,11 @@ class AuthRequest(BaseModel):
     email: str
     password: str
 
+class SignUpRequest(BaseModel):
+    name: str
+    email: str
+    password: str
+
 
 
 def hash_password(password: str):
@@ -60,7 +65,7 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
         raise HTTPException(status_code=401, detail="Invalid token")
 
 @router.post("/signup")
-def signup(data: AuthRequest):
+def signup(data: SignUpRequest):
     try:
         # Check if user exists
         existing = supabase.table("users").select("*").eq("email", data.email).execute()
@@ -72,6 +77,7 @@ def signup(data: AuthRequest):
 
         # Insert user
         res = supabase.table("users").insert({
+            "name" : data.name,
             "email": data.email,
             "password": hashed_password
         }).execute()
