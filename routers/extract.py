@@ -8,6 +8,7 @@ from services.llm import categorize
 from services.contacts import save_contact, get_all_contacts
 
 from core.dependencies import get_current_user
+from core.config import supabase
 
 router = APIRouter(prefix="/extract", tags=["Extract"])
 
@@ -57,3 +58,25 @@ async def extract_both_sides(
         for path in [path1, path2]:
             if os.path.exists(path):
                 os.remove(path)
+
+
+@router.get("/cards")
+async def get_all_cards(
+    current_user = Depends(get_current_user)
+):
+    """Get all scanned cards for the current logged in user."""
+    try:
+        result = supabase.table("cards") \
+            .select("*") \
+            .eq("scanned_by", current_user["id"]) \
+            .order("created_at", desc=True) \
+            .execute()
+
+        return {
+            "success": True,
+            "total":   len(result.data),
+            "data":    result.data
+        }
+    except Exception as e:
+        traceback.print_exc()
+        return {"success": False, "error": str(e)}
