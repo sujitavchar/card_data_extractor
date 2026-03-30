@@ -1,0 +1,52 @@
+.title {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  color: #888;
+}
+
+.result-card {
+  background: #1A1A1A;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #2A2A2A;
+}
+
+.result-card.clickable {
+  cursor: pointer;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nested {
+  margin-top: 8px;
+}
+
+.nested-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.primary {
+  width: 100%;
+  height: 56px;
+  background: #C8F045;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+}

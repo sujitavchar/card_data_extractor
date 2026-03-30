@@ -1,0 +1,132 @@
+.picker-slot {
+  width: 100%;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.picker-slot:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+}
+
+.picker-has-image {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+
+.picker-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.picker-preview-container {
+  width: 100%;
+  max-width: 260px;
+  height: 160px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.picker-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picker-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-secondary);
+  z-index: 2;
+  width: 100%;
+}
+
+.picker-icon {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.picker-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  z-index: 4;
+}
+
+.picker-action-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.picker-action-btn:hover {
+  background: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.picker-clear-btn {
+  margin-top: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.picker-clear-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.camera-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.camera-video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius-sm);
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scaleX(-1); /* Mirror effect for natural feel */
+}
+
+/* Unless it's a back camera, mirroring is good. We can leave it for now. */
